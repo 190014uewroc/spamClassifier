@@ -7,6 +7,7 @@ from sklearn.model_selection import GridSearchCV
 
 
 model_pkl_file = "models/model.pkl"
+vectorizer_pkl_file = "models/vectorizer_model.pkl"
 
 
 def create_model():
@@ -28,7 +29,8 @@ def create_model():
     model.fit(extracted_features, y_data)
     with open(model_pkl_file, 'wb') as file:
         pickle.dump(model, file)
-
+    with open(vectorizer_pkl_file, 'wb') as file:
+        pickle.dump(count_vector, file)
 
 
 if __name__ == '__main__':
