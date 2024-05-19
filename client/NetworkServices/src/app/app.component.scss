@@ -1,4 +1,7 @@
+
+
 .landingPageContent {
+  transition: 1s;
   width: 100vw;
   height: 100vh;
   background-color: #f5f5f5;
@@ -6,6 +9,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &--spam {
+    background-color: rgba(255, 0, 0, 0.66);
+  }
+
+  &--ham {
+    background-color: rgba(47, 149, 179, 0.62);
+  }
 
   .card {
     padding: 32px;
@@ -98,8 +109,21 @@
       &:active {
         background-color: #004faa;
       }
+
+      &:disabled {
+        background-color: #42423a;
+      }
     }
   }
+}
+
+
+.loadingState {
+  cursor: progress;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: bisque;
 }
 
 

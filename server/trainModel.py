@@ -11,7 +11,7 @@ vectorizer_pkl_file = "models/vectorizer_model.pkl"
 
 
 def create_model():
-    data = pd.read_csv('./spam.csv')
+    data = pd.read_csv('data/spam.csv')
     y_data = data['v1']
     x_data = data['v2']
 

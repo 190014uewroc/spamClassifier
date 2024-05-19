@@ -1,4 +1,5 @@
-<div class="landingPageContent">
+<div class="landingPageContent landingPageContent--spam"
+     [ngClass]="{'landingPageContent--spam': classificationResult === SPAM, 'landingPageContent--ham': classificationResult === HAM}">
   <div class="card">
     <div>
       <div class="card__header">
@@ -10,17 +11,16 @@
           <label class="placeholder-text" for="fname" id="placeholder-fname">
             Title
           </label>
-          <input type="text" id="fname" name="fname" autocomplete="off" value="">
+          <input type="text" id="fname" name="fname" autocomplete="off" value="" [disabled]="isLoading" [(ngModel)]="title" >
         </div>
         <div class="input">
           <label class="placeholder-text" for="fname" id="placeholder-fname">
             Content
           </label>
-          <textarea class="" type="text" id="textarea"></textarea>
+          <textarea class="" type="text" id="textarea" [disabled]="isLoading" [(ngModel)]="content"></textarea>
         </div>
       </div>
     </div>
-    <button class="card__button">Spam check</button>
+    <button class="card__button" (click)="predict()" [disabled]="isLoading">Spam check</button>
   </div>
 </div>
-

@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+//@import 'ngx-toastr/toastr-bs4-alert';
+
+body {
+  margin: 0;
+}
+
 .roboto-thin {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -70,3 +77,10 @@
   font-weight: 900;
   font-style: italic;
 }
+
+.loading {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  cursor: progress;
+}
+
