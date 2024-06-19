@@ -10,9 +10,6 @@ Hi! We are a group of students of The University of Economics in Wrocław. We ha
 -   [Usage](#usage)
 -   [API Endpoints](#api-endpoints)
 -   [Technologies Used](#technologies-used)
--   [Contributing](#contributing)
--   [License](#license)
--   [Acknowledgements](#acknowledgements)
 
 # Project structure
 ```
