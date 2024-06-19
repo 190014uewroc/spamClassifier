@@ -25,11 +25,11 @@ export class AppComponent {
   predict() {
     this.isLoading = true;
     this.http.post('http://localhost:5000/predict', {content: [this.title, this.content].join(` `)}).pipe(delay(500)).subscribe((res: any) => {
-        this.classificationResult = res?.[0]?.content;
+        this.classificationResult = res?.content;
         if (this.classificationResult === this.HAM) {
-          this.toastr.info(res?.[0]?.content, this.toastrTitle);
+          this.toastr.info(res?.content, this.toastrTitle);
         } else {
-          this.toastr.error(res?.[0]?.content, this.toastrTitle);
+          this.toastr.error(res?.content, this.toastrTitle);
         }
         this.isLoading = false;
         setTimeout(()=> {
