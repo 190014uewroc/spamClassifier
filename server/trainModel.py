@@ -22,11 +22,16 @@ def create_model():
     y_test = y_data[split:]
 
     count_vector = CountVectorizer()
-    extracted_features = count_vector.fit_transform(x_data)
+    extracted_features = count_vector.fit_transform(x_train)
+    x_test_counts = count_vector.transform(x_test)
 
     tuned_parameters = {'kernel': ['rbf', 'linear'], 'gamma': [1e-3, 1e-4], 'C': [1, 10, 100, 1000]}
     model = GridSearchCV(svm.SVC(), tuned_parameters)
-    model.fit(extracted_features, y_data)
+    model.fit(extracted_features, y_train)
+
+    accuracy = model.score(x_test_counts, y_test)
+    print(f"Model Accuracy: {accuracy:.4f}")
+
     with open(model_pkl_file, 'wb') as file:
         pickle.dump(model, file)
     with open(vectorizer_pkl_file, 'wb') as file:
