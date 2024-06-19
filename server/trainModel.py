@@ -18,8 +18,8 @@ def create_model():
     split = (int)(0.8 * data.shape[0])
     x_train = x_data[:split]
     x_test = x_data[split:]
-    y_train = x_data[:split]
-    y_test = x_data[split:]
+    y_train = y_data[:split]
+    y_test = y_data[split:]
 
     count_vector = CountVectorizer()
     extracted_features = count_vector.fit_transform(x_data)

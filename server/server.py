@@ -36,7 +36,7 @@ def predict_email_class():
     vectorized_array = glob_vectorizer.transform([string_as_array_not_clean])
 
     prediction = glob_model.predict(vectorized_array)
-    return json.dumps([{"content": prediction[0]}])
+    return json.dumps({"content": prediction[0]})
 
 
 if __name__ == '__main__':
